@@ -1,0 +1,275 @@
+aid: annex-cloud
+url: https://raw.githubusercontent.com/api-evangelist/annex-cloud/refs/heads/main/apis.yml
+name: Annex Cloud
+kind: company
+description: >-
+  Annex Cloud is an enterprise loyalty and customer retention platform. Its
+  Loyalty Experience Platform is built on a set of RESTful APIs that let brands
+  enroll and manage loyalty members, issue and redeem points, track member
+  activity and transactions, run referral (Refer A Friend) programs, and wire
+  loyalty into commerce and marketing stacks. The APIs are documented publicly
+  on a Redocly developer portal, but access is gated - credentials are
+  provisioned per customer and the base host is tenant-specific. Authentication
+  is JWT-based, created through the Tenant API, and prospective users are
+  directed to "Contact your Customer Success Manager for assistance with API
+  Connectors." No public self-serve signup, sandbox, or published pricing is
+  offered; this is an enterprise, partner/customer-gated API.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Loyalty
+- Customer Retention
+- Rewards
+- Points
+- Referrals
+- Customer Engagement
+- Enterprise
+- Gated Access
+created: '2026-07-10'
+modified: '2026-07-10'
+specificationVersion: '0.19'
+apis:
+- aid: annex-cloud:annex-cloud-members-api
+  name: Annex Cloud Members API
+  tags:
+  - Members
+  - Users
+  - Loyalty
+  - Enrollment
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/loyalty/loyalty
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/users.md
+    type: APIReference
+  description: >-
+    Create, enroll, retrieve, update, delete, search, and merge loyalty members,
+    and read a member's activity and activity summary. Documented operations
+    include POST /users, GET/PATCH /users/{memberId}, POST /users/search, POST
+    /mergeuser, GET /users/{memberId}/activity, GET
+    /users/{memberId}/activitysummary/{actionId}, and bulk POST /bulkpostusers /
+    POST /bulkpatchusers. Endpoint paths are documented on the Redocly portal;
+    the base host is tenant-provisioned and credentials are customer-gated.
+- aid: annex-cloud:annex-cloud-issuance-transactions-api
+  name: Annex Cloud Issuance and Transactions API
+  tags:
+  - Transactions
+  - Issuance
+  - Points
+  - Purchases
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/loyalty/loyalty/issuance
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/issuance.md
+    type: APIReference
+  description: >-
+    Record purchase and non-purchase transactions that issue loyalty points, and
+    manage their lifecycle. Documented operations include POST /issuance (create,
+    including non-purchase), PUT/PATCH /issuance (update, partial/full ship,
+    partial/full cancel), and POST /issuancedetails/{memberId} to filter issuance
+    records. Endpoint paths are documented; base host is tenant-provisioned and
+    access is customer-gated.
+- aid: annex-cloud:annex-cloud-points-api
+  name: Annex Cloud Multi-Point Bucket Points API
+  tags:
+  - Points
+  - Rewards
+  - Multi-Point Bucket
+  - Redemption
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/mpb/mpb
+  properties:
+  - url: https://annexcloud.redocly.app/mpb/mpb
+    type: Documentation
+  - url: https://annexcloud.redocly.app/mpb/mpb/points/addorredeempoints
+    type: APIReference
+  description: >-
+    Give, redeem, and award loyalty points to members, including across multiple
+    point buckets (Multi-Point Bucket V3). The documented operation is POST
+    /points to add, redeem, or award points for a member. Endpoint paths are
+    documented on the Redocly portal; the base host is tenant-provisioned and
+    credentials are customer-gated.
+- aid: annex-cloud:annex-cloud-activity-actions-api
+  name: Annex Cloud Activity and Actions API
+  tags:
+  - Activity
+  - Actions
+  - Tracking
+  - Engagement
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/loyalty/loyalty/action/getactionstatus
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/action/getactionstatus
+    type: APIReference
+  description: >-
+    Track and read the loyalty actions and activities performed against a site.
+    The documented operation is GET /actions/{status} (with status set to "all"
+    to retrieve every activity), complementing per-member activity reads on the
+    Members API. Endpoint paths are documented; base host is tenant-provisioned
+    and access is customer-gated.
+- aid: annex-cloud:annex-cloud-products-api
+  name: Annex Cloud Products API
+  tags:
+  - Products
+  - Catalog
+  - Point Calculation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/loyalty/loyalty/product
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/product
+    type: APIReference
+  description: >-
+    Manage the products participating in a loyalty program and their point
+    calculation. Documented operations include POST /products, POST
+    /bulkproducts, GET /products/{prod_id}, PATCH /products/{prod_id}, and POST
+    /bulkpatchproducts. Endpoint paths are documented; base host is
+    tenant-provisioned and access is customer-gated.
+- aid: annex-cloud:annex-cloud-orders-receipts-api
+  name: Annex Cloud Orders and Receipts API
+  tags:
+  - Orders
+  - Cart
+  - Receipts
+  - Transactions
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/loyalty/loyalty/orders/postcart
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/orders/postcart.md
+    type: APIReference
+  description: >-
+    Submit cart and order data and upload purchase receipts to drive loyalty
+    accrual. Documented operations include POST /cart and receipt intake such as
+    upload-by-URL. Endpoint paths are documented on the Redocly portal; the base
+    host is tenant-provisioned and credentials are customer-gated.
+- aid: annex-cloud:annex-cloud-refer-a-friend-api
+  name: Annex Cloud Refer A Friend API
+  tags:
+  - Referrals
+  - Refer A Friend
+  - Advocacy
+  - Acquisition
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/raf/raf
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  - url: https://annexcloud.redocly.app/raf/raf
+    type: APIReference
+  description: >-
+    Power Refer A Friend (referral) programs - generate and track referral
+    invitations across email, SMS, social, and unique links, and reward
+    advocates and referred friends. Exposed as the Refer A Friend V3 API on the
+    Redocly portal. Individual endpoint paths are documented in the gated
+    reference; base host is tenant-provisioned and access is customer-gated.
+- aid: annex-cloud:annex-cloud-tenant-auth-api
+  name: Annex Cloud Tenant and Authentication API
+  tags:
+  - Tenant
+  - Authentication
+  - JWT
+  - Internal Users
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/introduction-1
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: APIReference
+  description: >-
+    Manage internal users and issue the JWT tokens used to authenticate calls to
+    the rest of the Loyalty Experience Platform. The documentation states you can
+    create, update, and fetch an internal user's information and create the JWT
+    token using the Tenant API. Credentials to use this API are provisioned per
+    customer via a Customer Success Manager.
+- aid: annex-cloud:annex-cloud-registration-as-a-service-api
+  name: Annex Cloud Registration as a Service API
+  tags:
+  - Registration
+  - Onboarding
+  - Identity
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/introduction-1
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  description: >-
+    Registration as a Service - hosted member registration and account creation
+    flows that plug into the loyalty program. Listed as a distinct module on the
+    Annex Cloud developer portal; detailed endpoints live in the gated reference
+    and the base host is tenant-provisioned.
+- aid: annex-cloud:annex-cloud-incentive-engine-api
+  name: Annex Cloud Incentive Engine Management API
+  tags:
+  - Incentives
+  - Rules
+  - Promotions
+  - Rewards
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/introduction-1
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  description: >-
+    Incentive Engine Management - configure the rules, promotions, and reward
+    logic that govern how members earn and redeem across the loyalty program.
+    Listed as a distinct module on the developer portal; detailed endpoints live
+    in the gated reference and the base host is tenant-provisioned.
+- aid: annex-cloud:annex-cloud-privacy-policy-management-api
+  name: Annex Cloud Privacy Policy Management API
+  tags:
+  - Privacy
+  - Consent
+  - Compliance
+  - GDPR
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/introduction-1
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  description: >-
+    Privacy Policy Management - manage member consent and privacy-related
+    requests such as transaction erasure (right-to-be-forgotten), complementing
+    the transactionErasure operations documented on the Members API. Listed as a
+    distinct module; detailed endpoints live in the gated reference.
+- aid: annex-cloud:annex-cloud-webhooks-api
+  name: Annex Cloud Webhooks API
+  tags:
+  - Webhooks
+  - Events
+  - Notifications
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://annexcloud.redocly.app/introduction-1
+  properties:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+  description: >-
+    Webhooks and Webhook Events - subscribe to loyalty events so external systems
+    receive HTTP POST callbacks when members, points, transactions, or referrals
+    change. Server-to-endpoint HTTP callbacks, not a bidirectional WebSocket.
+    Listed as distinct modules on the developer portal.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/annex-cloud
+- type: Website
+  url: https://www.annexcloud.com
+- type: Documentation
+  url: https://annexcloud.redocly.app/introduction-1
+- type: SignUp
+  url: https://www.annexcloud.com/api-documentation/
+- type: Plans
+  url: plans/annex-cloud-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/annex-cloud-rate-limits.yml
+- type: FinOps
+  url: finops/annex-cloud-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,89 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Annex Cloud
+providerId: annex-cloud
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Loyalty
+- Customer Retention
+- Enterprise
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Annex Cloud spend. Annex Cloud is an enterprise loyalty and
+  customer retention platform sold on custom contracts through sales and
+  Customer Success; API access is bundled into the platform subscription rather
+  than billed as a standalone metered API. There is no public per-call pricing,
+  so cost is a negotiated annual platform fee typically scaled to loyalty
+  program size (member volume, modules, and services) rather than a usage meter
+  a customer self-manages via an invoice line item. The meters below describe
+  the business dimensions a customer would track internally to reason about
+  value, not published Annex Cloud billing units.
+notes: >-
+  No public rate card exists; all commercial terms are contact-sales. Verify
+  the actual billing model and any usage components directly with Annex Cloud
+  during reconciliation.
+sources:
+- https://www.annexcloud.com/
+- https://www.annexcloud.com/api-documentation/
+- https://www.annexcloud.com/enterprise-readiness/api/
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Annex Cloud
+serviceCategory: Loyalty and Customer Retention
+billingModel:
+  pricingCategory: Commitment-Based
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: Annex Cloud Loyalty Experience Platform
+  ServiceCategory: Loyalty and Customer Retention
+  ProviderName: Annex Cloud
+  PublisherName: Annex Cloud
+  InvoiceIssuerName: Annex Cloud
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Commitment-Based
+meters:
+- name: platform_subscription
+  description: Negotiated annual enterprise platform subscription that includes API access; not a public per-call meter.
+  unit: contract
+  aggregation: sum
+  dimensions:
+  - account
+- name: loyalty_members
+  description: Internal dimension - number of enrolled loyalty members, a common driver of enterprise loyalty pricing.
+  unit: members
+  aggregation: max
+  dimensions:
+  - account
+- name: transactions_processed
+  description: Internal dimension - purchase and non-purchase transactions issued through the platform.
+  unit: transactions
+  aggregation: sum
+  dimensions:
+  - account
+principles:
+- name: Visibility
+  description: Track enrolled members, transactions, and active modules against the negotiated platform fee to reason about cost per member and per transaction.
+- name: Allocation
+  description: Map loyalty program spend to the brands, regions, or business units that run the programs.
+- name: Optimization
+  description: Right-size the module set (Refer A Friend, Incentive Engine, etc.) and member tiers to what actually drives retention value.
+- name: Accountability
+  description: Assign an owner for the Annex Cloud relationship and review the annual agreement against realized loyalty program outcomes with the Customer Success Manager.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

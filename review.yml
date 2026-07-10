@@ -1,0 +1,128 @@
+aid: annex-cloud
+name: Annex Cloud
+review:
+  question: Does Annex Cloud expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-10'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Annex Cloud's documented developer
+    surface is request/response REST over HTTPS (the Loyalty Experience
+    Platform APIs on the Redocly portal). Its event/push mechanism is
+    Webhooks - server-to-endpoint HTTP POST callbacks configured per event -
+    not a WebSocket or SSE server-push transport on Annex Cloud's own API.
+    There is therefore no bidirectional realtime transport to model, and
+    webhook payload schemas sit behind customer-gated credentials.
+findings:
+  summary: |
+    Annex Cloud does not publish a documented public WebSocket API. Annex Cloud
+    is an enterprise loyalty and customer retention platform (the Loyalty
+    Experience Platform). It exposes a real, publicly documented set of RESTful
+    APIs on a Redocly developer portal (annexcloud.redocly.app) covering
+    Customer Loyalty (members/users, issuance/transactions, activities/actions,
+    products, orders/receipts), Multi-Point Bucket points, Refer A Friend,
+    Tenant/authentication, Registration as a Service, Incentive Engine
+    Management, Privacy Policy Management, and Webhooks. Authentication is
+    JWT-based, with tokens created through the Tenant API. Access is gated:
+    the documentation directs prospective users to "Contact your Customer
+    Success Manager for assistance with API Connectors," the base host is
+    tenant/customer-provisioned rather than publicly disclosed, and there is no
+    self-serve signup, sandbox, or published pricing. The only push/event
+    mechanism is Webhooks (HTTP POST callbacks) - there is no documented
+    WebSocket (ws:// or wss://) or SSE endpoint on Annex Cloud's own API.
+  accessModel: |
+    Enterprise, partner/customer-gated. Endpoint paths are documented publicly
+    on the Redocly portal, but usable credentials (JWT via the Tenant API) are
+    provisioned per customer through a Customer Success Manager, and each
+    customer calls a tenant-specific base host that is not disclosed in the
+    public docs. Endpoints are documented (not modeled/fabricated here); the
+    base URL is honestly unknown at the public layer.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: tenant-provisioned (not publicly disclosed)
+      documented: true
+      note: Loyalty Experience Platform REST APIs on annexcloud.redocly.app. JWT auth via the Tenant API. Base host is customer/tenant-specific.
+    - protocol: Webhook
+      scheme: https
+      documented: true
+      note: Webhooks / Webhook Events modules deliver loyalty events as server-to-endpoint HTTP POST callbacks. Not WebSocket.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in Annex Cloud's developer portal as of the review date.
+  endpointsDocumented:
+    - POST   /users
+    - GET    /users/{memberId}
+    - PATCH  /users/{memberId}
+    - POST   /userdelete
+    - POST   /users/search
+    - POST   /mergeuser
+    - GET    /mergeuser/{memberId}
+    - GET    /users/{memberId}/activity
+    - GET    /users/{memberId}/activitysummary/{actionId}
+    - GET    /users/{memberId}/allgroup
+    - POST   /bulkpostusers
+    - POST   /bulkpatchusers
+    - GET    /transactionErasure/{memberId}
+    - POST   /transactionErasure
+    - PATCH  /transactionErasure
+    - POST   /issuance
+    - PUT    /issuance
+    - PATCH  /issuance
+    - POST   /issuancedetails/{memberId}
+    - POST   /points
+    - GET    /actions/{status}
+    - POST   /products
+    - POST   /bulkproducts
+    - GET    /products/{prod_id}
+    - PATCH  /products/{prod_id}
+    - POST   /bulkpatchproducts
+    - POST   /cart
+  endpointsModeled: false
+  endpointsModeledNote: |
+    The endpoint paths listed above are transcribed from Annex Cloud's public
+    Redocly reference, not fabricated. They are documented; only the base host
+    (tenant-provisioned) and usable credentials are gated. Modules whose
+    individual endpoint paths are not exposed on the public reference (Refer A
+    Friend V3, Registration as a Service, Incentive Engine Management, Privacy
+    Policy Management, Webhook Events) are described at the module level without
+    inventing specific paths.
+sources:
+  - url: https://annexcloud.redocly.app/introduction-1
+    type: Documentation
+    note: Developer portal introduction listing all API modules; JWT via Tenant API.
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/users.md
+    type: APIReference
+    note: Members/Users CRUD, search, merge, activity, bulk, transactionErasure.
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/issuance.md
+    type: APIReference
+    note: Issuance / transaction lifecycle (create, ship, cancel, filter).
+  - url: https://annexcloud.redocly.app/mpb/mpb/points/addorredeempoints
+    type: APIReference
+    note: Multi-Point Bucket POST /points add/redeem/award.
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/action/getactionstatus
+    type: APIReference
+    note: GET /actions/{status} activity tracking.
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/product
+    type: APIReference
+    note: Products CRUD and point calculation.
+  - url: https://annexcloud.redocly.app/loyalty/loyalty/orders/postcart.md
+    type: APIReference
+    note: POST /cart orders and receipt intake.
+  - url: https://www.annexcloud.com/api-documentation/
+    type: Documentation
+    note: States "Contact your Customer Success Manager for assistance with API Connectors" - gated access.
+  - url: https://www.annexcloud.com/enterprise-readiness/api/
+    type: Documentation
+    note: API overview - "a powerful set of RESTful APIs"; enterprise deployment.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists. Annex Cloud's documented public API is
+    request/response REST (Loyalty Experience Platform), and its only event/push
+    mechanism is Webhooks (HTTP POST callbacks). No AsyncAPI document was created
+    because there is no server-push transport on Annex Cloud's own API to model,
+    and webhook payload schemas are behind customer-gated credentials.

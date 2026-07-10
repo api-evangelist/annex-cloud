@@ -1,0 +1,52 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Annex Cloud
+providerId: annex-cloud
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Loyalty
+- Customer Retention
+- Rate Limiting
+- Quotas
+- Enterprise
+description: >-
+  Annex Cloud does not publish fixed numeric rate limits for its Loyalty
+  Experience Platform APIs. Because access is enterprise and tenant-provisioned,
+  throughput and any per-account throttles are governed by the customer's
+  contract and platform configuration rather than by publicly documented
+  per-minute request caps. Bulk endpoints (for example POST /bulkpostusers,
+  POST /bulkproducts) exist specifically to move large volumes efficiently,
+  which implies per-request batching is the intended path for high-volume work.
+  Verify any applicable limits with your Customer Success Manager.
+notes: >-
+  No numeric per-account or per-endpoint limits are documented on the public
+  Redocly portal as of the review date. The throttled response code is assumed
+  to follow HTTP conventions (429) but is not explicitly published.
+sources:
+- https://annexcloud.redocly.app/introduction-1
+- https://annexcloud.redocly.app/loyalty/loyalty/users.md
+- https://www.annexcloud.com/api-documentation/
+responseCodes:
+  throttled: 429
+limits:
+- name: API Requests
+  scope: account
+  metric: requests
+  limit: not published
+  notes: No fixed numeric request-rate limit is documented; governed by the enterprise contract and tenant configuration.
+- name: Bulk Operations
+  scope: request
+  metric: records
+  limit: batch-based
+  notes: Bulk endpoints (bulkpostusers, bulkpatchusers, bulkproducts, bulkpatchproducts) batch many records per request for high-volume workloads.
+policies:
+- name: Contract-Governed
+  description: Throughput and any throttling are set by the customer's enterprise agreement and tenant provisioning, not by public per-endpoint caps.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter and honor Retry-After on any 429 responses.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

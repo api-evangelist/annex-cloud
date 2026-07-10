@@ -1,0 +1,64 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Annex Cloud
+providerId: annex-cloud
+created: '2026-07-10'
+modified: '2026-07-10'
+reconciled: false
+tags:
+- Loyalty
+- Customer Retention
+- Rewards
+- Enterprise
+- Plans
+description: >-
+  Annex Cloud does not publish public, self-serve pricing for its Loyalty
+  Experience Platform or its APIs. It is sold as an enterprise loyalty and
+  customer retention platform through sales and Customer Success, with custom
+  contracts. API access is bundled into a platform subscription rather than sold
+  as a standalone metered API; credentials are provisioned per customer and the
+  documentation directs prospective users to "Contact your Customer Success
+  Manager for assistance with API Connectors." No free tier, sandbox, or
+  published per-call rates are offered. The single honest plan below is an
+  enterprise / contact-sales agreement.
+notes: >-
+  All figures are contact-sales; no numeric pricing is published by Annex Cloud.
+  Verify current commercial terms directly with Annex Cloud sales during
+  reconciliation.
+sources:
+- https://www.annexcloud.com/
+- https://www.annexcloud.com/api-documentation/
+- https://www.annexcloud.com/enterprise-readiness/api/
+- https://annexcloud.redocly.app/introduction-1
+plans:
+- id: annex-cloud-enterprise
+  name: Enterprise / Custom
+  type: enterprise
+  description: >-
+    Custom enterprise loyalty platform subscription that includes API access
+    (Loyalty Experience Platform REST APIs, Multi-Point Bucket, Refer A Friend,
+    Webhooks). Provisioned per customer with a tenant-specific base host and
+    JWT credentials via the Tenant API. Pricing, member volumes, and included
+    modules are negotiated with Annex Cloud sales.
+  entries:
+  - label: Enterprise Agreement
+    name: enterprise
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Loyalty Experience Platform APIs
+  - name: Multi-Point Bucket
+  - name: Refer A Friend
+  - name: Webhooks
+  - name: Customer Success Manager
+  - name: Tenant-Provisioned Credentials
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
