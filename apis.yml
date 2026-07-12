@@ -256,6 +256,8 @@ apis:
     change. Server-to-endpoint HTTP callbacks, not a bidirectional WebSocket.
     Listed as distinct modules on the developer portal.
 common:
+- type: DomainSecurity
+  url: security/annex-cloud-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/annex-cloud
 - type: Website
