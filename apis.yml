@@ -14,7 +14,19 @@ description: >-
   directed to "Contact your Customer Success Manager for assistance with API
   Connectors." No public self-serve signup, sandbox, or published pricing is
   offered; this is an enterprise, partner/customer-gated API.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: enterprise
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Enterprise
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/annex-cloud.png
 tags:
 - Loyalty
 - Customer Retention
