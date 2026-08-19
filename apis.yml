@@ -38,7 +38,7 @@ tags:
 - Gated Access
 created: '2026-07-10'
 modified: '2026-07-10'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: annex-cloud:annex-cloud-members-api
   name: Annex Cloud Members API
