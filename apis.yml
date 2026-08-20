@@ -44,6 +44,11 @@ apis:
   name: Annex Cloud Members API
   tags:
   - Members
+  - User
+  - Loyalty
+  - Enrollment
+  tags_raw:
+  - Members
   - Users
   - Loyalty
   - Enrollment
@@ -65,6 +70,11 @@ apis:
 - aid: annex-cloud:annex-cloud-issuance-transactions-api
   name: Annex Cloud Issuance and Transactions API
   tags:
+  - Transaction
+  - Issuance
+  - Points
+  - Purchases
+  tags_raw:
   - Transactions
   - Issuance
   - Points
@@ -86,6 +96,11 @@ apis:
 - aid: annex-cloud:annex-cloud-points-api
   name: Annex Cloud Multi-Point Bucket Points API
   tags:
+  - Points
+  - Rewards
+  - Multi-Point Bucket
+  - Redemptions
+  tags_raw:
   - Points
   - Rewards
   - Multi-Point Bucket
@@ -126,6 +141,10 @@ apis:
 - aid: annex-cloud:annex-cloud-products-api
   name: Annex Cloud Products API
   tags:
+  - Product
+  - Catalog
+  - Point Calculation
+  tags_raw:
   - Products
   - Catalog
   - Point Calculation
@@ -145,6 +164,11 @@ apis:
 - aid: annex-cloud:annex-cloud-orders-receipts-api
   name: Annex Cloud Orders and Receipts API
   tags:
+  - Order
+  - Cart
+  - Receipts
+  - Transaction
+  tags_raw:
   - Orders
   - Cart
   - Receipts
@@ -254,6 +278,10 @@ apis:
 - aid: annex-cloud:annex-cloud-webhooks-api
   name: Annex Cloud Webhooks API
   tags:
+  - Webhook
+  - Event
+  - Notification
+  tags_raw:
   - Webhooks
   - Events
   - Notifications
