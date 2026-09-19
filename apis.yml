@@ -219,6 +219,11 @@ apis:
 - aid: annex-cloud:annex-cloud-tenant-auth-api
   name: Annex Cloud Tenant and Authentication API
   tags:
+  - Tenants
+  - Authentication
+  - JWT
+  - Internal Users
+  tags_raw:
   - Tenant
   - Authentication
   - JWT
