@@ -2,6 +2,7 @@ generated: '2026-10-15'
 method: searched
 checked:
 - shopify/integrations/shopify-integration-edges.yml
+- zendesk/integrations/zendesk-integration-edges.yml
 source:
 - shopify/integrations/shopify-integration-edges.yml
 edges:
@@ -23,3 +24,20 @@ edges:
   detected_by: mirror-platform-listings.py
   publisher_verified:
   - Built for Shopify
+- partner_name: Zendesk (own)
+  partner: zendesk
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.zendesk.com/marketplace/apps/support/196703/annex-cloud-customer-loyalty-app/
+  mirror_of: zendesk/integrations/zendesk-integration-edges.yml
+  apps:
+  - Annex Cloud Customer Loyalty App
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: eComm and Payments
