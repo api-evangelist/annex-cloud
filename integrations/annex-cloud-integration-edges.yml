@@ -1,10 +1,20 @@
-generated: '2026-10-15'
+generated: '2026-10-20'
 method: searched
+source:
+- shopify/integrations/shopify-integration-edges.yml
+- https://zapier.com/apps/annex-cloud/integrations
+- https://n8n.io/integrations/annex-cloud/
+- https://composio.dev/toolkits/annex-cloud
+- https://monid.ai/tools/annex-cloud
 checked:
 - shopify/integrations/shopify-integration-edges.yml
 - zendesk/integrations/zendesk-integration-edges.yml
-source:
-- shopify/integrations/shopify-integration-edges.yml
+- https://composio.dev/toolkits/annex-cloud
+- https://monid.ai/tools/annex-cloud
+- https://n8n.io/integrations/annex-cloud/
+- https://zapier.com/apps/annex-cloud/integrations
+summary: null
+marketplace_apps: []
 edges:
 - partner_name: Shopify (own)
   partner: shopify
@@ -41,3 +51,4 @@ edges:
   detected: '2026-10-20'
   detected_by: mirror-platform-listings.py
   category: eComm and Payments
+templates: []
