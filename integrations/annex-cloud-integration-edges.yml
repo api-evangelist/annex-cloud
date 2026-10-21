@@ -13,6 +13,7 @@ checked:
 - https://monid.ai/tools/annex-cloud
 - https://n8n.io/integrations/annex-cloud/
 - https://zapier.com/apps/annex-cloud/integrations
+- salesforce-commerce-cloud/integrations/salesforce-commerce-cloud-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
@@ -51,4 +52,21 @@ edges:
   detected: '2026-10-20'
   detected_by: mirror-platform-listings.py
   category: eComm and Payments
+- partner_name: Salesforce Commerce Cloud (own)
+  partner: salesforce-commerce-cloud
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=3703281c-71b9-4997-ab8c-97d29e3fe440
+  mirror_of: salesforce-commerce-cloud/integrations/salesforce-commerce-cloud-integration-edges.yml
+  apps:
+  - Annex Cloud Loyalty Cartridge for B2C Commerce
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: eCommerce, pointOfSaleAndInStore, ratingsAndReviews
 templates: []

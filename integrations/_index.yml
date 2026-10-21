@@ -28,3 +28,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: annex-cloud-salesforce-commerce-cloud-own
+  label: Salesforce Commerce Cloud (own)
+  partner: salesforce-commerce-cloud
+  partner_name: Salesforce Commerce Cloud (own)
+  category: eCommerce, pointOfSaleAndInStore, ratingsAndReviews
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=3703281c-71b9-4997-ab8c-97d29e3fe440
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
